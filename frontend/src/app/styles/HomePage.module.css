@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+}
+
+.leftHalf {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightHalf {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .leftHalf,
+    .rightHalf {
+        height: 45vh;
+    }
+}

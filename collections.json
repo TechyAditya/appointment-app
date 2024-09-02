@@ -1,0 +1,128 @@
+{
+    "info": {
+        "name": "Appointment and Weather API",
+        "_postman_id": "unique-id-here",
+        "description": "API for managing appointments and fetching weather data",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Admin Login",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"adminpassword\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/admin/login",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "admin",
+                        "login"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Book Appointment",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"John Doe\",\n  \"phone\": \"+1234567890\",\n  \"email\": \"john@example.com\",\n  \"appointment_timestamp\": \"2024-09-01T14:00:00Z\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/appointments",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "appointments"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Appointments",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer YOUR_JWT_TOKEN"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8080/appointments",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "appointments"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Weather (Default to Kolkata)",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/weather",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "weather"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Weather (With City Parameter)",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/weather?city=Mumbai",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "weather"
+                    ],
+                    "query": [
+                        {
+                            "key": "city",
+                            "value": "Mumbai"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
